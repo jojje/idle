@@ -34,7 +34,7 @@ func LowerPriorities(procs []*Process) {
 	}
 }
 
-func FindMatchedProcesses(matchers []pattern.Matcher) []*Process {
+func FindProcesses(matchers []pattern.Matcher) []*Process {
 	var out []*Process
 
 	procs, err := listProcesses()

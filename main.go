@@ -73,7 +73,7 @@ func main() {
 	excluded := util.ParseExcludedPids(excludedPids)
 
 	lowerPrio := func() {
-		procs := process.FindMatchedProcesses(matchers)
+		procs := process.FindProcesses(matchers)
 		procs = util.ExcludeProcesses(procs, excluded)
 		process.LowerPriorities(procs)
 	}

@@ -32,7 +32,7 @@ func TestLowerPriorities(t *testing.T) {
 	if err != nil {
 		t.Fatal(err)
 	}
-	procs := FindMatchedProcesses([]pattern.Matcher{match})
+	procs := FindProcesses([]pattern.Matcher{match})
 
 	if len(procs) == 0 {
 		t.Fatal("failed to find current go process")
