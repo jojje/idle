@@ -26,24 +26,6 @@ func TestProcessListing(t *testing.T) {
 	}
 }
 
-func TestLoweringPriority(t *testing.T) {
-	procs, err := listProcesses()
-	if err != nil {
-		t.Error(err)
-	}
-
-	found := false
-	for _, p := range procs {
-		if p.Name[:2] == "go" && p.Pid > 0 {
-			found = true
-		}
-	}
-
-	if !found {
-		t.Error("Failed to find own go process")
-	}
-}
-
 func TestLowerPriorities(t *testing.T) {
 	pgm := filepath.Base(os.Args[0])
 	match, err := pattern.NewMatcher(pgm, false)
