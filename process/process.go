@@ -7,13 +7,6 @@ import (
 	"github.com/jojje/idle/pattern"
 )
 
-type processPriority int
-
-const (
-	processPriorityOther processPriority = iota
-	processPriorityIdle
-)
-
 type Process struct {
 	Pid  uint32
 	Name string
